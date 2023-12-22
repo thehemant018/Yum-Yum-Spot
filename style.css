@@ -1,0 +1,451 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Bacasime+Antique&family=Dancing+Script:wght@600&family=Poppins:wght@400;500;700&family=Ubuntu:wght@300&display=swap');
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* --redmi-10s: #EA1179; */
+    --redmi-10s: #f7b887f9;
+    --redmi-10s-dark: #a94776;
+}
+
+body {
+    font-weight: 300;
+    font-size: 1.05rem;
+    line-height: 1.6;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+.btn {
+    font-family: inherit;
+    cursor: pointer;
+    outline: 0;
+    font-size: 1.05rem;
+}
+
+.text {
+    opacity: 0.8;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+
+.container {
+    min-height: 100vh;
+}
+
+.food-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0;
+    background: #fff;
+    text-align: center;
+}
+
+.food-search {
+    margin: 2rem 0;
+    display: flex;
+    background-color: var(--redmi-10s);
+    height: 95px;
+}
+
+.food-search cite {
+    font-size: 1rem;
+}
+
+.food-search-box {
+    margin: 1.2rem 0;
+    display: flex;
+    align-items: stretch;
+    width: 540px;
+    margin-left: auto;
+    margin-right: 0;
+
+}
+
+.logo-txt {
+    margin: 29px 0 10px 15px;
+    
+   
+}
+
+
+.search-control,
+.search-btn {
+    width: 100%;
+}
+
+.search-control {
+    padding: 0 1rem;
+    font-size: 1.1rem;
+    font-family: inherit;
+    outline: 0;
+    border: 1px solid var(--redmi-10s);
+    color: var(--redmi-10s);
+    border-radius: 5px;
+    /* border-top-left-radius: 2rem;
+    border-bottom-left-radius: 2rem; */
+}
+
+.search-control::placeholder {
+    color: var(--redmi-10s);
+}
+
+.search-btn {
+    width: 55px;
+    height: 55px;
+    font-size: 1.8rem;
+    /* background: var(--redmi-10s); */
+    background-color: #fff;
+    /* color: #fff; */
+    color: var(--redmi-10s);
+    border: none;
+    border-radius: 10px;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+}
+
+.search-btn:hover {
+    /* background: var(--redmi-10s-dark); */
+    color: black;
+}
+
+.food-result {
+    margin-top: 4rem;
+}
+
+#food {
+    margin: 2.4rem 0;
+}
+
+.food-item {
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 4px 21px -12px rgba(0, 0, 0, 0.79);
+    margin: 2rem 0;
+}
+
+.food-img img {
+    width: 100%;
+    display: block;
+}
+
+.food-name {
+    padding: 1.5rem 0.5rem;
+}
+
+.food-name a {
+    text-align: center;
+}
+
+.food-name h3 {
+    font-size: 1.4rem;
+}
+
+.recipe-btn {
+    text-decoration: none;
+    color: #fff;
+    background: var(--redmi-10s);
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.75rem 0;
+    display: block;
+    width: 175px;
+    margin: 1rem auto;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+
+}
+
+.recipe-btn:hover {
+    background: var(--redmi-10s-dark);
+}
+
+
+.food-details {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    color: #fff;
+    background: var(--redmi-10s);
+    border-radius: 1rem;
+    -webkit-border-radius: 1rem;
+    -moz-border-radius: 1rem;
+    width: 90%;
+    height: 90%;
+    overflow-y: scroll;
+    display: none;
+    padding: 2rem 0;
+}
+
+.food-details::-webkit-scrollbar {
+    width: 10px;
+}
+
+.food-details::-webkit-scrollbar-thumb {
+    background: #f0f0f0;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+}
+
+.showRecipe {
+    display: block;
+}
+
+.food-details-content {
+    margin: 2rem;
+}
+
+.food-details-content p:not(.recipe-category) {
+    padding: 1rem 0;
+}
+
+.recipe-close-btn {
+    position: absolute;
+    right: 2rem;
+    top: 2rem;
+    font-size: 1.8rem;
+    background: #fff;
+    border: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.9;
+}
+
+.recipe-title {
+    letter-spacing: 1px;
+    padding-bottom: 1rem;
+}
+
+.recipe-category {
+    background: #fff;
+    font-weight: 600;
+    color: var(--redmi-10s);
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+    -webkit-border-radius: 0.3rem;
+    -moz-border-radius: 0.3rem;
+}
+
+.recipe-category {
+    background: #fff;
+    font-weight: 600;
+    color: var(--redmi-10s);
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    border-radius: 0.3rem;
+    -webkit-border-radius: 0.3rem;
+    -moz-border-radius: 0.3rem;
+    -ms-border-radius: 0.3rem;
+    -o-border-radius: 0.3rem;
+}
+
+.recipe-instruct {
+    padding: 1rem 0;
+}
+
+.recipe-food-img img {
+    width: 350px;
+    height: 300px;
+    margin: 0 auto;
+    display: block;
+    border-radius: 50px;
+}
+
+.recipe-link {
+    margin: 1.4rem 0;
+}
+
+.recipe-link a {
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear;
+}
+
+.recipe-link a:hover {
+    opacity: 0.8;
+}
+
+.Yt-btn {
+    background-color: #fff;
+    text-decoration: none;
+    color: var(--redmi-10s);
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 0.75rem 0;
+    display: block;
+    width: 175px;
+    margin: 1rem auto;
+    border-radius: 2rem;
+    -webkit-border-radius: 2rem;
+    -moz-border-radius: 2rem;
+    transition: all 0.4s linear;
+    -webkit-transition: all 0.4s linear;
+    -moz-transition: all 0.4s linear
+}
+
+.Yt-btn a {
+    text-decoration: none;
+    color: var(--redmi-10s);
+
+
+
+}
+
+.Yt-btn:hover {
+    background-color: var(--redmi-10s-dark);
+    transform: all 0.4s Linear;
+}
+
+.Yt-btn a:hover {
+    color: #fff;
+}
+
+footer {
+
+    background-color: var(--redmi-10s);
+    color: #fff;
+    justify-content: center;
+    text-align: center;
+}
+
+.about a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.about-page {
+    text-align: center;
+    margin: 150px 0 0 0;
+}
+
+.about-btn {
+    height: 45px;
+    width: 134px;
+    font-size: 1rem;
+    border-radius: 25px;
+    margin: 40px 0 0 0;
+    background-color: var(--redmi-10s);
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
+    border: 1px solid black;
+}
+
+
+.about-btn:hover{
+    background-color: #fff;
+    color: var(--redmi-10s);
+}
+
+.about-link {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.chef-logo{
+    height: 100px;
+    width: 100px;
+}
+
+.notFound {
+    grid-template-columns: 1fr !important;
+    color: var(--tenne-tawny);
+    font-size: 1.8rem;
+    font-weight: 600;
+    width: 100%;
+}
+
+
+
+
+@media screen and (min-width: 600px) {
+    /* .food-search-box {
+        width: 540px;
+        margin-left: auto;
+        margin-right: 0;
+        
+    } */
+    
+    
+}
+
+@media screen and (min-width: 768px) {
+    #food {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    .food-item {
+        margin: 0;
+    }
+
+    .food-details {
+        width: 700px;
+    }
+    
+}
+
+@media screen and (min-width: 992px) {
+    #food {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+}  
+@media screen and (max-width: 992) {
+        .logo-txt{
+            font-size:1em ;
+        }
+        .food-search-box {
+            width: 400px;
+            margin-left: auto;
+            margin-right: 0;
+            
+        }
+        
+}
+
+
+
+@media screen and (max-width: 690px) {
+    .logo-txt{
+        font-size:0.85em ;
+    }
+    .food-search-box {
+        width: 250px;
+        margin-left: auto;
+        margin-right: 0;
+        
+    }
+    
+}
